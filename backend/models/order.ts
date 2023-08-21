@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
 
-const UserAddressSchema = new Schema({
+const OrderSchema = new Schema({
     userId: {
         type : String,
         required: true
@@ -53,4 +53,4 @@ const UserAddressSchema = new Schema({
     }
 },{timestamps: true});
 
-module.exports = mongoose.model('UserAddress',UserAddressSchema);
+module.exports = mongoose.model('UserAddress',OrderSchema);
