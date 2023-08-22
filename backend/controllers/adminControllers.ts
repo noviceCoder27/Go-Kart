@@ -1,35 +1,34 @@
 import { Request, Response } from "express";
 import Admin from '../models/admin';
 
+
+interface IAdmin extends Document{
+    signUp: Function,
+    signIn: Function 
+}
+
+
 export function getProducts(req:Request,res:Response) {
     res.json({message: 'hello'});
 }
 
 
 export async function signUp(req:Request,res:Response) {
-    const {username,password} = req.body;
-    if(!username || !password){
-        return res.status(400).send({message: "Invalid Credentials"});
+    const {email,password} = req.body;
+    const user = await (Admin as unknown as IAdmin).signUp(email,password);
+    if(!user){
+        return res.status(400).send({message: "Error creating account"});
     }
-    const userName = await Admin.findOne({username});
-    if(userName) {
-        return res.status(400).send({message: "Admin already exists"})
-    }
-    await Admin.create({userName: username, password});
-    res.status(201).send({message: "Admin created successfully"});
+    res.status(201).send({message: "User created successfully"});
 }
 
 export async function signIn(req:Request,res:Response) {
-    const {username,password} = req.body;
-    if(!username || !password){
-        return res.status(400).send({message: "Invalid Credentials"});
+    const {email,password} = req.body;
+    const user = await (Admin as unknown as IAdmin).signIn(email,password);
+    if(!user){
+        return res.status(400).send({message: "Error logging in"});
     }
-    const user = await Admin.findOne({username,password});
-    if(!user) {
-        return res.status(400).send({message: "User doesn't exists"})
-    }
-    await Admin.create({userName: username, password});
-    res.status(201).send({message: "successfully logged in"});
+    res.status(201).send({message: "Logged in successfully"});
 }
 
 export function addProduct(req:Request,res:Response) {
