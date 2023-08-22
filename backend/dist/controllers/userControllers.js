@@ -24,21 +24,24 @@ function getPurchasedProducts(req, res) {
 exports.getPurchasedProducts = getPurchasedProducts;
 function signUp(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
-        const { username, password } = req.body;
-        if (!username || !password) {
-            return res.status(400).send({ message: "Invalid Credentials" });
+        const { email, password } = req.body;
+        const user = yield user_1.default.signUp(email, password);
+        if (!user) {
+            return res.status(400).send({ message: "Error creating account" });
         }
-        const userName = yield user_1.default.findOne({ username });
-        if (userName) {
-            return res.status(400).send({ message: "User already exists" });
-        }
-        yield user_1.default.create({ userName: username, password });
         res.status(201).send({ message: "User created successfully" });
     });
 }
 exports.signUp = signUp;
 function signIn(req, res) {
-    res.json({ message: 'hello' });
+    return __awaiter(this, void 0, void 0, function* () {
+        const { email, password } = req.body;
+        const user = yield user_1.default.signIn(email, password);
+        if (!user) {
+            return res.status(400).send({ message: "Error logging in" });
+        }
+        res.status(201).send({ message: "Logged in successfully" });
+    });
 }
 exports.signIn = signIn;
 function purchaseProduct(req, res) {
