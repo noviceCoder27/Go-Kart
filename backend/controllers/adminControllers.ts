@@ -1,45 +1,54 @@
 import { Request, Response } from "express";
+import Admin from '../models/admin';
 
-function getProducts(req:Request,res:Response) {
+export function getProducts(req:Request,res:Response) {
     res.json({message: 'hello'});
 }
 
 
-function signUp(req:Request,res:Response) {
+export async function signUp(req:Request,res:Response) {
+    const {username,password} = req.body;
+    if(!username || !password){
+        return res.status(400).send({message: "Invalid Credentials"});
+    }
+    const userName = await Admin.findOne({username});
+    if(userName) {
+        return res.status(400).send({message: "Admin already exists"})
+    }
+    await Admin.create({userName: username, password});
+    res.status(201).send({message: "Admin created successfully"});
+}
+
+export async function signIn(req:Request,res:Response) {
+    const {username,password} = req.body;
+    if(!username || !password){
+        return res.status(400).send({message: "Invalid Credentials"});
+    }
+    const user = await Admin.findOne({username,password});
+    if(!user) {
+        return res.status(400).send({message: "User doesn't exists"})
+    }
+    await Admin.create({userName: username, password});
+    res.status(201).send({message: "successfully logged in"});
+}
+
+export function addProduct(req:Request,res:Response) {
     res.json({message: 'hello'});
 }
 
-function signIn(req:Request,res:Response) {
+export function deleteProduct(req:Request,res:Response) {
     res.json({message: 'hello'});
 }
 
-function addProduct(req:Request,res:Response) {
+export function updateProduct(req:Request,res:Response) {
     res.json({message: 'hello'});
 }
 
-function deleteProduct(req:Request,res:Response) {
+export function confirmDelivery(req:Request,res:Response) {
     res.json({message: 'hello'});
 }
 
-function updateProduct(req:Request,res:Response) {
+export function trackOrders(req:Request,res:Response) {
     res.json({message: 'hello'});
 }
 
-function confirmDelivery(req:Request,res:Response) {
-    res.json({message: 'hello'});
-}
-
-function trackOrders(req:Request,res:Response) {
-    res.json({message: 'hello'});
-}
-
-module.exports = {
-    getProducts ,
-    signUp,
-    signIn,
-    addProduct,
-    deleteProduct,
-    updateProduct,
-    confirmDelivery,
-    trackOrders
-};
