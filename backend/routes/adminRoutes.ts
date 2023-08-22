@@ -1,6 +1,6 @@
 import express from 'express';
 const router = express.Router();
-const {
+import {
     getProducts ,
     signUp,
     signIn,
@@ -9,7 +9,7 @@ const {
     updateProduct,
     confirmDelivery,
     trackOrders
-} = require('../controllers/adminControllers');
+} from '../controllers/adminControllers';
 
 router.get('/products', getProducts);
 router.post('/signup',signUp);
@@ -21,4 +21,4 @@ router.post('/confirm',confirmDelivery);
 router.get('/status',trackOrders);
 
 
-module.exports = router;
+export default router;

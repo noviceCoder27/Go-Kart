@@ -2,8 +2,8 @@ require('dotenv').config();
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'express';
-const userRoutes = require('./routes/userRoutes');
-const adminRoutes = require('./routes/adminRoutes');
+import userRoutes from './routes/userRoutes';
+import adminRoutes from './routes/adminRoutes';
 
 const app = express();
 
@@ -16,7 +16,7 @@ app.use('/user',userRoutes);
 mongoose.connect((process.env.MONGO_URL || ""))
 .then(() => {
     app.listen(process.env.PORT,() => {
-        console.log('Listening to port 3000')
+        console.log('Listening to port ', process.env.PORT )
     });
 });
    
