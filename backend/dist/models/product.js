@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const Schema = mongoose_1.default.Schema;
 const ProductSchema = new Schema({
-    tite: {
+    title: {
         type: String,
         required: true
     },
@@ -27,4 +27,4 @@ const ProductSchema = new Schema({
         required: true
     }
 }, { timestamps: true });
-module.exports = mongoose_1.default.model('Products', ProductSchema);
+exports.default = mongoose_1.default.model('Products', ProductSchema);

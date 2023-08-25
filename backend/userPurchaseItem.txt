@@ -1,0 +1,11 @@
+When you send a response using res.status(200).send({Purchased_Items: user.purchasedProducts}), the value of the Purchased_Items property in the response object is set to the value of the user.purchasedProducts property. If the value of user.purchasedProducts is undefined, then the Purchased_Items property will also be undefined.
+
+However, when you send an object as a response using the send method of the Express Response object, the object is automatically converted to a JSON string using the JSON.stringify method. According to the JSON specification, undefined is not a valid JSON value, so when an object containing an undefined property is converted to a JSON string, the property is omitted from the resulting string.
+
+This means that if the value of user.purchasedProducts is undefined, then the response object {Purchased_Items: user.purchasedProducts} will be converted to the JSON string {} when it is sent as a response, resulting in an empty JSON object being sent to the client.
+
+If you want to explicitly include a property with an undefined value in the response object, you can set its value to null instead of undefined, as null is a valid JSON value. For example, you could do something like this:
+
+res.status(200).send({ Purchased_Items: user.purchasedProducts || null });
+Copy
+In this example, we use the logical OR operator (||) to set the value of the Purchased_Items property to either the value of user.purchasedProducts or null, depending on whether user.purchasedProducts is truthy or falsy. Since undefined is a falsy value, if user.purchasedProducts is undefined, then the value of the Purchased_Items property will be set to null. This will result in a JSON object containing a "Purchased_Items": null property being sent as a response.

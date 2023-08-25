@@ -1,11 +1,20 @@
-import mongoose, {Document} from "mongoose";
+import mongoose, {Document,Schema} from "mongoose";
 import validator from 'validator'
 import bcrpyt from 'bcrypt'
 
 
-const Schema = mongoose.Schema;
+export interface IUser extends Document{
+    email: string,
+    password: string,
+    userName?: string,
+    profilePic?: string,
+    purchasedProducts: Array<string>
+    signUp: Function,
+    signIn: Function 
+}
 
-const UserSchema = new Schema({
+
+const UserSchema: Schema = new Schema({
     email: {
         type : String,
         required: true
@@ -20,8 +29,9 @@ const UserSchema = new Schema({
     profilePic: {
         type: String
     },
-    purchasedProucts :{
+    purchasedProducts :{
         type: Array<String>,
+        requried: true
     }
 },{timestamps: true});
 
@@ -60,4 +70,4 @@ UserSchema.statics.signIn = async function(email,password) {
     return user;
 }
 
-export default mongoose.model<Document>('User',UserSchema);
+export default mongoose.model<IUser>('User',UserSchema);

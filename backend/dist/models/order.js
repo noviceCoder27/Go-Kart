@@ -53,6 +53,10 @@ const OrderSchema = new Schema({
     deliveryType: {
         type: String,
         required: true
+    },
+    status: {
+        type: String,
+        required: true
     }
 }, { timestamps: true });
-module.exports = mongoose_1.default.model('UserAddress', OrderSchema);
+exports.default = mongoose_1.default.model('Orders', OrderSchema);

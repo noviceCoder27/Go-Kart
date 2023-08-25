@@ -30,9 +30,6 @@ const AdminSchema = new Schema({
     },
     profilePic: {
         type: String
-    },
-    userAddress: {
-        type: String,
     }
 }, { timestamps: true });
 AdminSchema.statics.signUp = function (email, password) {

@@ -1,5 +1,21 @@
 import mongoose, {Document} from "mongoose";
 
+export interface IOrder extends Document {
+    userId: string,
+    productId: string,
+    country: string,
+    city: string,
+    landmark: string,
+    firstName: string,
+    lastName:string,
+    pinCode: number,
+    state: string,
+    mobileNumber: number,
+    emailId: string,
+    deliveryType: string,
+    status: string
+}
+
 const Schema = mongoose.Schema;
 
 const OrderSchema = new Schema({
@@ -50,7 +66,11 @@ const OrderSchema = new Schema({
     deliveryType: {
         type: String,
         required: true
+    },
+    status: {
+        type: String,
+        required: true
     }
 },{timestamps: true});
 
-module.exports = mongoose.model<Document>('UserAddress',OrderSchema);
+export default mongoose.model<IOrder>('Orders',OrderSchema);
