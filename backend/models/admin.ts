@@ -2,6 +2,16 @@ import mongoose, {Document} from "mongoose";
 import validator from "validator";
 import  bcrpyt  from 'bcrypt';
 
+
+export interface IAdmin extends Document{
+    email: string,
+    password: string,
+    userName?: string,
+    profilePic?: string,
+    signUp: Function,
+    signIn: Function 
+}
+
 const Schema = mongoose.Schema;
 
 const AdminSchema = new Schema({
@@ -18,9 +28,6 @@ const AdminSchema = new Schema({
     },
     profilePic: {
         type: String
-    },
-    userAddress: {
-        type: String,
     }
 },{timestamps: true});
 
@@ -59,4 +66,4 @@ AdminSchema.statics.signIn = async function(email,password) {
     return user;
 }
 
-export default mongoose.model<Document>('Admin',AdminSchema);
+export default mongoose.model<IAdmin>('Admin',AdminSchema);
