@@ -1,13 +1,14 @@
-import { Button } from "@/components/ui/button"
+import { BrowserRouter as Router,Routes,Route } from "react-router-dom"
 import 'animate.css'
+import {Home} from './pages/Home';
 function App() {
 
-  const animate = "animate__animated animate__bounce"
-
   return (
-    <>
-      <Button className = {animate}>Click Me</Button>
-    </>
+    <Router>
+        <Routes>
+            <Route path = '/' element = {<Home />}/>
+        </Routes>
+    </Router>
   )
 }
 
