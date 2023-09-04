@@ -3,7 +3,7 @@ import Admin from '../models/admin';
 import jwt,{ Secret } from "jsonwebtoken";
 import { IAdmin } from './../models/admin';
 import Products, { IProduct } from './../models/product';
-import Order from './../models/order';
+import Order, { IOrder } from './../models/order';
 import { purchaseProduct } from "./userControllers";
 
 
@@ -117,7 +117,7 @@ export async function confirmDelivery(req:Request,res:Response) {
                         const orderObj = order.toObject();
                         const updatedOrder =  {...orderObj,status:action}
                         await Order.findByIdAndUpdate(_id,updatedOrder,{new:true});
-                        res.status(201).send({message: action === "confirmed" ? "Order placed successfully": "Order delivery rejected"});
+                        res.status(201).send({message: action === "confirmed" ? "Order placed successfully": "Order delivery cancelled"});
                     } catch(err) {
                         console.log(err);
                         res.status(400).send({message: "Error updating order status"});
@@ -150,5 +150,27 @@ export async function trackOrders(req:Request,res:Response) {
     } catch(err) {
         console.log(err);
         res.status(400).send({message: "Error finding orders"});
+    }
+}
+
+export async function cancelOrder(req:Request,res:Response) {
+    const {userId,productId} = req.body;
+    try {
+        const order: IOrder | null = await Order.findOne({userId,productId});
+        if(order) {
+            const updatedOrder = {...order,status: "cancelled"};
+            const {_id} = order;
+            try {
+                const updateStatus = await Order.findByIdAndUpdate(_id,updatedOrder,{new:true});
+                res.status(201).send({Cancelled: updateStatus});
+            } catch(err) {
+                return res.status(400).send({err: "Error cancelling order"}); 
+            }
+        } else {
+            return res.status(404).send({err: "Order not found"});
+        }
+    } catch(err) {
+        console.log(err);
+        return res.status(400).send({err: "Error finding order"});
     }
 }

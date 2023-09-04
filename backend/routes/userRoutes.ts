@@ -6,6 +6,7 @@ import {
     signUp,
     signIn,
     placeOrder} from '../controllers/userControllers';
+import { cancelOrder } from '../controllers/adminControllers';
 import { requireAuth } from './../middleware/requireAuth';
 
 
@@ -14,5 +15,6 @@ router.get('/purchasedProducts',requireAuth,getPurchasedProducts);
 router.post('/signup',signUp);
 router.post('/signin',signIn);
 router.post('/purchase',requireAuth,placeOrder);
+router.post('/cancel',requireAuth,cancelOrder);
 
 export default router;
