@@ -15,4 +15,5 @@ router.delete('/:productId', requireAuth_1.requireAuth, adminControllers_1.delet
 router.put('/:productId', requireAuth_1.requireAuth, adminControllers_1.updateProduct);
 router.post('/confirm', requireAuth_1.requireAuth, adminControllers_1.confirmDelivery);
 router.get('/status', requireAuth_1.requireAuth, adminControllers_1.trackOrders);
+router.get('/cancel', requireAuth_1.requireAuth, adminControllers_1.cancelOrder);
 exports.default = router;

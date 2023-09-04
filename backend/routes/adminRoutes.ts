@@ -9,7 +9,8 @@ import {
     deleteProduct,
     updateProduct,
     confirmDelivery,
-    trackOrders
+    trackOrders,
+    cancelOrder
 } from '../controllers/adminControllers';
 
 
@@ -22,6 +23,7 @@ router.delete('/:productId',requireAuth,deleteProduct);
 router.put('/:productId',requireAuth,updateProduct);
 router.post('/confirm',requireAuth,confirmDelivery);
 router.get('/status',requireAuth,trackOrders);
+router.get('/cancel',requireAuth,cancelOrder);
 
 
 export default router;
