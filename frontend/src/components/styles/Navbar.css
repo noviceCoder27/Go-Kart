@@ -1,0 +1,43 @@
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 3rem;
+    border-bottom: 1px solid #c1c7c6;
+    margin-bottom: 1rem;
+    font-family: sans-serif;
+}
+
+.categories-button {
+    width: 100%;
+    background-color: #0aad0a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: sans-serif;
+    padding: 0.8rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+}
+
+.category-btn {
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    color: #3d4f58;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    width: 100%;
+    text-align : start;
+}
+
+.category-btn:hover {
+    background-color:#e9edf2 ;
+}

@@ -8,18 +8,13 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { RiShoppingBag3Line } from "react-icons/ri";
 import { TbShoppingCartDiscount } from "react-icons/tb";
 import { BiGridAlt } from "react-icons/bi";
-import {Categories, getCategoryStyles } from "../navbar/Categories";
+import {Categories } from "../navbar/Categories";
 import { CategoriesDesktop } from "../navbar/CategoriesDesktop";
 import { useState } from "react";
+import './../styles/Navbar.css';
 
 
 export const Navbar = () => {
-    const categoryStyles = getCategoryStyles();
-    const allCategoryStyles = {
-      ...categoryStyles,
-      width: "15vw",
-      marginTop: "1rem",
-    }
     const [screenWidth,setScreenWidth] = useState(window.innerWidth);
     const [opened, { open, close }] = useDisclosure(false);
     window.onresize = () => {
@@ -27,15 +22,7 @@ export const Navbar = () => {
     } 
 
     return (
-      <header style = 
-      {{display: "flex",
-        justifyContent: "space-around",
-        alignItems: "center",
-        padding: "1rem 3rem",
-        borderBottom: "1px solid #c1c7c6",
-        marginBottom: "1rem",
-        fontFamily: "sans-serif",
-      }}>
+      <header>
           <Flex align= "center" gap= "sm" sx={{marginRight: "3rem"}}>
             <TbShoppingCartDiscount style = {{color: "#198754",fontSize: "2.5rem"}}/>
             <h2 style = {{fontSize: "2rem"}}><span style = {{color: "#0aad0a"}}>Go</span>-Kart</h2>
@@ -44,7 +31,7 @@ export const Navbar = () => {
           <Flex sx={{marginRight: "auto"}} align= "center" gap= "md">
             <HoverCard>
               <HoverCard.Target>
-                <button style={allCategoryStyles}>
+                <button className="categories-button" style = {{width: "15vw",marginTop: "1rem"}}>
                   <BiGridAlt style = {{marginBottom: "0.1rem"}}/>
                   <span>All Departments</span>
                 </button>
