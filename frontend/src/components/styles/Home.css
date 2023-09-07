@@ -1,0 +1,75 @@
+.shop-btn {
+    width: 8vw;
+    color: white;
+    background-color: #001e2b;
+    border: none;
+    padding: 0.8rem;
+    display: flex;
+    min-width: 100px;
+    justify-content: center;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 0;
+}
+
+.popular-item {
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    cursor:pointer;
+}
+
+.popular-item:hover {
+    border: 1px solid green;
+    box-shadow: 1px 1px 3px 1px lightgray;
+}
+
+.image-btns {
+    margin-top: 6rem;
+    margin-left: 4rem;
+    margin-right: 0.5rem;
+    opacity: 0;
+}
+
+.image-btns button:first-child {
+    cursor: pointer;
+}
+
+.image-btns button:last-child {
+    cursor: pointer;
+}
+
+.image-btns:hover {
+    opacity: 100;
+}
+
+
+.image-btn:hover, .image-btn2:hover {
+    opacity: 100;
+}
+
+.add-btn {
+    background: #0aad0a;
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 0.2rem 1rem;
+    border-radius: 5px;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    gap: "0.2rem";
+    align-items: center;
+}
+
+
+@media screen and (max-width: 768px) {
+    .flex-breakPt, .footer {
+        flex-direction: column;
+    }
+
+    .footer {
+        gap: 2rem;
+    }
+}
+
