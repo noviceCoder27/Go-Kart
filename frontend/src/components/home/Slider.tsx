@@ -7,8 +7,8 @@ export const Slider = () => {
 
 
   return (
-    <Flex justify= "center" mt= "1.5rem">
-        <Carousel withIndicators height={500} withControls = {false} w={"90%"} loop>
+    <Flex mt= "1.5rem">
+        <Carousel withIndicators height={500} withControls = {false} w={"100%"} loop >
           <Carousel.Slide>
             <BackgroundImage
             src = "https://freshcart.codescandy.com/assets/images/slider/slide-1.jpg"

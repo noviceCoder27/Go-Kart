@@ -1,35 +1,21 @@
-import { Box, Container, Flex } from "@mantine/core"
-import {BiLeftArrow} from 'react-icons/bi'
-import {BiRightArrow} from 'react-icons/bi'
+import { Flex } from "@mantine/core"
 import {Carousel} from '@mantine/carousel'
 
 
 
 export const Featured = () => {
   return (
-    <Container w={"100%"}>
-        <Flex justify={"space-between"} px={"2rem"}>
-            <Box>Featured Products</Box>
-            <Flex>
-                <BiLeftArrow />
-                <BiRightArrow />
-            </Flex>
+    <Flex w={"100%"} direction = "column" sx = {{fontFamily: "sans-serif"}}>
+        <Flex justify={"space-between"} mt = "1.5rem">
+            <h1 style = {{fontSize: "1.5rem"}}>Featured Products</h1>
         </Flex>
-        <Flex >
-                <Carousel
-                    withIndicators
-                    height={200}
-                    w = {"100%"}
-                    slideGap="md"
-                    align="start"
-                >
-                <Carousel.Slide size = {"30%"} sx = {{border: "1px solid red", marginRight: "2rem"}}>1</Carousel.Slide>
-                <Carousel.Slide size = {"30%"} sx = {{border: "1px solid darkgreen", marginRight: "2rem"}}>2</Carousel.Slide>
-                <Carousel.Slide size = {"30%"} sx = {{border: "1px solid violet", marginRight: "2rem"}}>3</Carousel.Slide>
-                <Carousel.Slide size = {"30%"} sx = {{border: "1px solid green", marginRight: "2rem"}}>4</Carousel.Slide>
-                <Carousel.Slide size = {"30%"} sx = {{border: "1px solid blue", marginRight: "2rem"}}>5</Carousel.Slide>
-            </Carousel>
+        <Flex>
+            <Carousel slideSize="70%" w= "100%" align="start" slideGap="md" loop withControls={false}>
+                <Carousel.Slide  sx = {{border: "1px solid black", width: "200px", height: "200px"}}>1</Carousel.Slide>
+                <Carousel.Slide>2</Carousel.Slide>
+                <Carousel.Slide>3</Carousel.Slide>
+            </Carousel>  
         </Flex>
-    </Container>
+    </Flex>
   )
 }
