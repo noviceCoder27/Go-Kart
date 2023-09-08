@@ -31,6 +31,25 @@
     opacity: 0;
 }
 
+.image-btns button {
+    border: none;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 1px 1px 5px 2px gray;
+}
+
+.image-btns button:hover {
+    background-color: #0aad0a;
+}
+
+.btn-icon {
+    font-size: 1.5rem;
+    color: gray;
+}
+
+.btn-icon:hover {
+    color: white;
+}
 .image-btns button:first-child {
     cursor: pointer;
 }
