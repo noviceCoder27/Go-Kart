@@ -12,6 +12,7 @@ import {Categories } from "../navbar/Categories";
 import { CategoriesDesktop } from "../navbar/CategoriesDesktop";
 import { useState } from "react";
 import './../styles/Navbar.css';
+import Cart from "../navbar/Cart";
 
 
 export const Navbar = () => {
@@ -20,6 +21,7 @@ export const Navbar = () => {
     window.onresize = () => {
         setScreenWidth(window.innerWidth);
     } 
+    const [showCart,setShowCart] = useState(false);
 
     return (
       <header>
@@ -52,7 +54,7 @@ export const Navbar = () => {
           <Flex gap="md" sx = {{"fontSize" : "1.5rem"}}>
             <AiOutlineHeart style = {{color: "#3d4f58",cursor: "pointer"}}/>
             <AiOutlineUser style = {{color: "#3d4f58",cursor: "pointer"}}/>
-            <RiShoppingBag3Line style = {{color: "#3d4f58",cursor: "pointer"}}/>
+            <RiShoppingBag3Line style = {{color: "#3d4f58",cursor: "pointer"}} onClick = {() => setShowCart(true)}/>
             {screenWidth < 768 && <GiHamburgerMenu style = {{cursor: "pointer", color: "#0aad0a"}} onClick = {open}/>}
           </Flex>
           {screenWidth < 768 && 
@@ -73,7 +75,8 @@ export const Navbar = () => {
             rightSection = {<AiOutlineSearch />}
             />
             <Categories />
-          </Drawer>}   
+          </Drawer>}
+          <Cart showCart = {showCart} setShowCart = {setShowCart}/>   
       </header>
     )
 }
