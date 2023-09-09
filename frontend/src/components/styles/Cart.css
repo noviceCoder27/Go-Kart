@@ -1,0 +1,29 @@
+.quantity-btn {
+    flex-grow: 1;
+    font-size: 120%;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid lightgray;
+}
+
+.btn1 {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.btn2 {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.quantity-btn:hover {
+    background-color: lightgray;
+}
+
+.remove {
+    color: gray;
+}
+
+.remove:hover {
+    color:black ;
+}
