@@ -1,3 +1,22 @@
+.carousel-item {
+    border: 1px solid gray; 
+    height: 250px;
+    min-width: 150px;
+    margin-right: 7rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.carousel-item:hover {
+    border: 1px solid #0aad0a;
+    box-shadow: 2px 5px 5px 3px lightgray;
+}
+
 .shop-btn {
     width: 8vw;
     color: white;
@@ -90,5 +109,13 @@
     .footer {
         gap: 2rem;
     }
+    .carousel-item {
+        min-width: 22vw;
+    }
 }
 
+@media screen and (max-width: 550px) {
+    .carousel-item {
+        min-width: 50vw;
+    }
+}
