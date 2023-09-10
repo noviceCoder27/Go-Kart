@@ -13,6 +13,8 @@ import { CategoriesDesktop } from "../navbar/CategoriesDesktop";
 import { useState } from "react";
 import './../styles/Navbar.css';
 import Cart from "../navbar/Cart";
+import SignIn from "../user/SignIn";
+import SignUp from "../user/SignUp";
 
 
 export const Navbar = () => {
@@ -22,7 +24,7 @@ export const Navbar = () => {
         setScreenWidth(window.innerWidth);
     } 
     const [showCart,setShowCart] = useState(false);
-
+    const [credentialsPopup,setCredentialsPopup] = useState(false);
     return (
       <header>
           <Flex align= "center" gap= "sm" sx={{marginRight: "3rem"}}>
@@ -53,7 +55,7 @@ export const Navbar = () => {
           </Flex>}
           <Flex gap="md" sx = {{"fontSize" : "1.5rem"}}>
             <AiOutlineHeart style = {{color: "#3d4f58",cursor: "pointer"}}/>
-            <AiOutlineUser style = {{color: "#3d4f58",cursor: "pointer"}}/>
+            <AiOutlineUser onClick = {() => setCredentialsPopup(true)} style = {{color: "#3d4f58",cursor: "pointer"}}/>
             <RiShoppingBag3Line style = {{color: "#3d4f58",cursor: "pointer"}} onClick = {() => setShowCart(true)}/>
             {screenWidth < 768 && <GiHamburgerMenu style = {{cursor: "pointer", color: "#0aad0a"}} onClick = {open}/>}
           </Flex>
@@ -76,7 +78,9 @@ export const Navbar = () => {
             />
             <Categories />
           </Drawer>}
-          <Cart showCart = {showCart} setShowCart = {setShowCart}/>   
+          <Cart showCart = {showCart} setShowCart = {setShowCart}/>
+          {<SignIn credentialsPopup = {credentialsPopup} setCredentialsPopup = {setCredentialsPopup}/>}
+          {false && <SignUp credentialsPopup = {credentialsPopup} setCredentialsPopup = {setCredentialsPopup}/>}   
       </header>
     )
 }
