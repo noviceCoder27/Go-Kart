@@ -7,7 +7,7 @@ export const Featured = () => {
   return (
     <Flex w={"100%"} direction = "column" sx = {{fontFamily: "sans-serif"}}>
         <Flex justify={"space-between"} mt = "1.5rem">
-            <h1 style = {{fontSize: "1.5rem"}}>Featured Products</h1>
+            <h1 style = {{fontSize: "1.5rem"}}>Featured Categories</h1>
         </Flex>
           <Carousel 
           slideSize="80%" 
