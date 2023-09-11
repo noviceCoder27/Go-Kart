@@ -45,8 +45,6 @@
 
 .image-btns {
     margin-top: 6rem;
-    margin-left: 4rem;
-    margin-right: 0.5rem;
     opacity: 0;
 }
 
@@ -55,6 +53,15 @@
     background: white;
     border-radius: 8px;
     box-shadow: 1px 1px 5px 2px gray;
+}
+
+.image-btns button:first-child {
+    margin-left: auto;
+}
+
+.image-btns button:last-child {
+    margin-right: auto;
+    transform: translateX(-5px);
 }
 
 .image-btns button:hover {
