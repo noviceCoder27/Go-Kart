@@ -1,0 +1,74 @@
+.product-weight {
+    color: gray;
+    font-weight: 600;
+    padding: 1rem 1.5rem;
+    background: transparent;
+    border-radius: 8px;
+    border: 1px solid gray;
+    cursor: pointer;
+}
+
+.product-weight:hover {
+    background:rgb(226, 226, 226) ;
+    color:rgb(96, 96, 96);
+}
+
+.quantity-btn {
+    font-size: 120%;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid lightgray;
+}
+
+.btn1 {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.btn2 {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.quantity-input {
+    width: 30px;
+    border: none;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    text-align: center;
+}
+
+.add-cart button:first-child {
+    background-color: #0aad0a;
+    border: none;
+    color: white;
+    padding: 1rem 3rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.add-cart button:first-child:hover {
+    background-color: #078d07;
+}
+
+.add-cart button:last-child {
+    width:60px;
+    background-color: white;
+    border: none;
+    background-color: rgb(232, 229, 229);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.add-cart button:last-child:hover {
+    background-color: lightgray;
+}
+
+.title-section {
+    font-size: 1.2rem;
+}
+.title-section:hover {
+    color: #0aad0a;
+}
