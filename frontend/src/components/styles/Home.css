@@ -3,7 +3,7 @@
     height: 250px;
     min-width: 150px;
     margin-right: 7rem;
-    border-radius: 8px;
+    border-radius: 20px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -93,6 +93,15 @@
     opacity: 100;
 }
 
+.product-link {
+    text-decoration: none;
+    color: black;
+}
+.product-link:hover {
+    text-decoration: underline;
+}
+
+
 .add-btn {
     background: #0aad0a;
     border: none;
@@ -107,6 +116,9 @@
     align-items: center;
 }
 
+.add-btn:hover {
+    background: #049204;
+}
 
 @media screen and (max-width: 768px) {
     .flex-breakPt, .footer {
