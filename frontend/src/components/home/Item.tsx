@@ -1,5 +1,6 @@
 import { BackgroundImage, Flex, Grid } from "@mantine/core"
 import { AiOutlineEye, AiOutlineHeart } from "react-icons/ai"
+import { Link } from "react-router-dom"
 
 
 export const Item = () => {
@@ -36,7 +37,9 @@ export const Item = () => {
                     </button>
                     </Flex>
                     <p style = {{color: "gray",fontSize: "0.7rem",marginTop: "4rem",marginLeft: "0.5rem"}}>Snack & Munchies</p>
-                    <p style = {{fontSize: "0.8rem",marginTop: "0.5rem",fontWeight: "600",marginLeft: "0.5rem"}}>Haldiram's Sev Bhujia</p>
+                    <Link to = "/product" className = "product-link">
+                      <p style = {{fontSize: "0.8rem",marginTop: "0.5rem",fontWeight: "600",marginLeft: "0.5rem"}}>Haldiram's Sev Bhujia</p>
+                    </Link>
                     <Flex justify="space-between">
                       <p style={{margin: "0.5rem",fontWeight: "600"}}>$18</p>
                       <button className="add-btn">

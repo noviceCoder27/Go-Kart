@@ -15,6 +15,7 @@ import './../styles/Navbar.css';
 import Cart from "../navbar/Cart";
 import SignIn from "../user/SignIn";
 import SignUp from "../user/SignUp";
+import { Link } from "react-router-dom";
 
 
 export const Navbar = () => {
@@ -27,10 +28,13 @@ export const Navbar = () => {
     const [credentialsPopup,setCredentialsPopup] = useState(false);
     return (
       <header>
+        <Link to = "/" style ={{textDecoration: "none",color: "#0aad0a"}}>
           <Flex align= "center" gap= "sm" sx={{marginRight: "3rem"}}>
-            <TbShoppingCartDiscount style = {{color: "#198754",fontSize: "2.5rem"}}/>
-            <h2 style = {{fontSize: "2rem"}}><span style = {{color: "#0aad0a"}}>Go</span>-Kart</h2>
-          </Flex>
+              <TbShoppingCartDiscount style = {{color: "#198754",fontSize: "2.5rem"}}/>
+              <h2 style = {{fontSize: "2rem"}}><span style = {{color: "#0aad0a"}}>Go</span>-Kart</h2>
+            </Flex>
+        </Link>
+          
           {screenWidth > 768 && 
           <Flex sx={{marginRight: "auto"}} align= "center" gap= "md">
             <HoverCard>
@@ -54,7 +58,9 @@ export const Navbar = () => {
             /> 
           </Flex>}
           <Flex gap="md" sx = {{"fontSize" : "1.5rem"}}>
-            <AiOutlineHeart style = {{color: "#3d4f58",cursor: "pointer"}}/>
+            <Link to = "/wishlist">
+              <AiOutlineHeart style = {{color: "#3d4f58",cursor: "pointer"}}/>
+            </Link>
             <AiOutlineUser onClick = {() => setCredentialsPopup(true)} style = {{color: "#3d4f58",cursor: "pointer"}}/>
             <RiShoppingBag3Line style = {{color: "#3d4f58",cursor: "pointer"}} onClick = {() => setShowCart(true)}/>
             {screenWidth < 768 && <GiHamburgerMenu style = {{cursor: "pointer", color: "#0aad0a"}} onClick = {open}/>}
