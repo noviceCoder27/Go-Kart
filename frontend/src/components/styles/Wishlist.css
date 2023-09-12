@@ -1,0 +1,32 @@
+.cart-btn {
+    color:white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 5px;
+    font-weight:600;
+}
+
+.disable {
+    background: darkslategrey;
+}
+
+.enable {
+    background: #0aad0a;
+    cursor: pointer;
+}
+
+.enable:hover {
+    background: #027d02;
+}
+
+.remove {
+    margin-left: 2rem;
+    font-size:1.5rem;
+    cursor:pointer;
+    border-radius: 100%;
+    padding: 0.5rem;
+}
+
+.remove:hover {
+    background-color: gray;
+}
