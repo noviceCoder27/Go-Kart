@@ -57,7 +57,7 @@ export const Navbar = () => {
             radius= "md"
             /> 
           </Flex>}
-          <Flex gap="md" sx = {{"fontSize" : "1.5rem"}}>
+          <Flex gap="md" sx = {{"fontSize" : "1.5rem"}} ml="auto">
             <Link to = "/wishlist">
               <AiOutlineHeart style = {{color: "#3d4f58",cursor: "pointer"}}/>
             </Link>

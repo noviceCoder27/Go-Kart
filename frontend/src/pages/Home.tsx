@@ -6,7 +6,6 @@ import { Flex } from '@mantine/core';
 import { Footer } from '../components/home/Footer';
 
 
-
 export const Home = () => {
   
   return (

@@ -2,8 +2,12 @@ import { BackgroundImage, Flex, Grid } from "@mantine/core"
 import { AiOutlineEye, AiOutlineHeart } from "react-icons/ai"
 import { Link } from "react-router-dom"
 
+interface ItemProps {
+  openModal: () => void
+}
 
-export const Item = () => {
+export const Item = ({openModal}: ItemProps) => {
+  
   return (
     <Grid.Col 
               span={5} 
@@ -29,8 +33,8 @@ export const Item = () => {
                   h = "145px"
                   mt = "0.5rem">
                     <Flex className="image-btns" gap = "0.8rem">
-                    <button >
-                      <AiOutlineEye className = "btn-icon"/>
+                    <button onClick = {openModal}>
+                      <AiOutlineEye className = "btn-icon" />
                     </button>
                     <button >
                       <AiOutlineHeart className = "btn-icon"/>

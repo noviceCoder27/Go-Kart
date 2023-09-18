@@ -28,13 +28,13 @@ const Wishlist = () => {
                     </td>
                     <td>$5.00</td>
                     <td>
-                        <span style = {{background: "#198754",color: "white",padding: "0.2rem 0.5rem",borderRadius: "5px",fontWeight: "600"}}>In stock</span>
+                        <span style = {{background: "#198754",color: "white",padding: "0.2rem 0.5rem",borderRadius: "5px",fontWeight: "600",display: "flex",width: "fit-content"}}>In stock</span>
                     </td>
                     <td>
                         <button className = "cart-btn enable">Add to cart</button>
                     </td>
                     <td>
-                        <BiSolidTrash className = "remove"/>
+                        <BiSolidTrash className = "remove-btn"/>
                     </td>
                 </tr>
                 <tr>
@@ -47,13 +47,13 @@ const Wishlist = () => {
                     </td>
                     <td>$5.00</td>
                     <td>
-                        <span style = {{background: "#db3030",color: "white",padding: "0.2rem 0.5rem",borderRadius: "5px",fontWeight: "600"}}>Out of stock</span>
+                        <span style = {{background: "#db3030",color: "white",padding: "0.2rem 0.5rem",borderRadius: "5px",fontWeight: "600",display: "flex",width: "fit-content"}}>Out of stock</span>
                     </td>
                     <td>
                        <button disabled className= "cart-btn disable">Add to cart</button>
                     </td>
                     <td>
-                        <BiSolidTrash className = "remove"/>
+                        <BiSolidTrash className = "remove-btn"/>
                     </td>
                 </tr> 
             </tbody>
