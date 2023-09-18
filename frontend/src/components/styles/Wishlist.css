@@ -19,7 +19,7 @@
     background: #027d02;
 }
 
-.remove {
+.remove-btn {
     margin-left: 2rem;
     font-size:1.5rem;
     cursor:pointer;
@@ -27,6 +27,6 @@
     padding: 0.5rem;
 }
 
-.remove:hover {
+.remove-btn:hover {
     background-color: gray;
 }

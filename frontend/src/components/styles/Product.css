@@ -1,3 +1,7 @@
+.product-page {
+    padding: 0 10rem;
+}
+
 .product-weight {
     color: gray;
     font-weight: 600;
@@ -72,4 +76,22 @@
 }
 .title-section:hover {
     color: #0aad0a;
+}
+
+@media screen and (max-width: 768px) {
+
+    .product-page {
+        padding: 0 1.5rem;
+    }
+    .main-section {
+        flex-direction: column;
+        padding: 0;
+    }
+
+
+    .image-gallery, .purchase-details {
+        width: 100%;
+        align-items: flex-start;
+    }
+
 }

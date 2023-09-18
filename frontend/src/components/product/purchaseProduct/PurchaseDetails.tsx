@@ -6,7 +6,7 @@ import { AiOutlineHeart } from "react-icons/ai";
 
 const PurchaseDetails = () => {
   return (
-    <Flex direction="column" w= "50%">
+    <Flex direction="column" w= "50%" className="purchase-details">
                 <Flex direction="column">
                     <p style = {{color: "#0aad0a"}}>Bakery Biscuits</p>
                     <h2 style = {{fontSize: "2.5rem",marginTop: "0.2rem"}}>Hide & Seek</h2>
@@ -37,7 +37,7 @@ const PurchaseDetails = () => {
                     </button>
                 </Flex>
                 <hr style = {{width: "100%"}}/>
-                <Flex direction= "column" my = '2rem'>
+                <Flex direction= "column" my = '2rem' w= "100%">
                     <Flex justify="space-between" w = "70%">
                         <p style = {{fontWeight: "600"}}>Product Code: </p>
                         <p>FBB2321</p>
