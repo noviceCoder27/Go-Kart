@@ -11,7 +11,24 @@ const ProductSchema = new Schema({
         required: true
     },
     description: {
-        type: String,
+        type: {
+            info: {
+                type: {
+                    weight: Number,
+                    brand: String,
+                    manufactureDate: Date,
+                    expiryDate: Date
+                }
+            },
+            details: {
+                type: {
+                    nutrients: String,
+                    storage: String,
+                    units: Number,
+                    seller: String
+                }
+            }
+        },
         required: true
     },
     category: {
@@ -24,6 +41,10 @@ const ProductSchema = new Schema({
     },
     isAvailable: {
         type: Boolean,
+        required: true
+    },
+    shippingDate: {
+        type: Date,
         required: true
     }
 }, { timestamps: true });

@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import Admin from '../models/admin';
 import jwt,{ Secret } from "jsonwebtoken";
 import { IAdmin } from './../models/admin';
-import Products, { IProduct } from './../models/product';
+import Products from './../models/product';
 import Order, { IOrder } from './../models/order';
 import { purchaseProduct } from "./userControllers";
 
